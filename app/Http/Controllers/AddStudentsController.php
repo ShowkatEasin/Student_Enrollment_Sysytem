@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests;
+use Session;
+use Illuminate\Support\Facades\Redirect;
+
+session_start();
+
+
 
 class AddStudentsController extends Controller
 {
@@ -11,4 +19,5 @@ class AddStudentsController extends Controller
     {
         return view('admin.addstudent');
     }
+
 }

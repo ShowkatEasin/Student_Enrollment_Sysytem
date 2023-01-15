@@ -333,7 +333,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">Basic form elements</h2>
-                            <form class="forms-sample" method="post" action="/addstudent" enctype="multipart/form-data">
+                            <form class="forms-sample" method="post" action="/save_student" enctype="multipart/form-data">
                               @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Student Name</label>

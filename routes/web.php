@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AddStudentsController;
 use App\Http\Controllers\CseController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\TutionFeeController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\AllStudentsController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\SaveStudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,9 @@ Route::get('/admin', function () {
 
 //Add Students//
 Route::get('/addstudent', [AddStudentsController::class, 'addstudent']);
+
+//Save Students//
+Route::post('/savestudent', [SaveStudentController::class, 'savestudent']);
 
 //cse//
 Route::get('/cse', [CseController::class, 'cse']);
