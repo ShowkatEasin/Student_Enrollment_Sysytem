@@ -47,8 +47,8 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Select</a>
                                 <div class="dropdown-menu">
-                                    <a href="{{ route('login') }}" class="dropdown-item">Admin</a>
-                                    <a href="{{ route('register') }}" class="dropdown-item">Student</a>
+                                    <a href="{{ route('admin_dashboard') }}" class="dropdown-item">Admin</a>
+                                    <a href="{{ route('student_dashboard') }}" class="dropdown-item">Student</a>
                                 </div>
                             </div>
                         </div>

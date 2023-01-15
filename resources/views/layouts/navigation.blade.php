@@ -1,6 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -11,7 +10,8 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                 <button> {{ __('Profile Update') }}</button>
+                 <br>  
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -21,7 +21,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+               <button>  {{ __('Log Out') }}</button>      
                     </x-responsive-nav-link>
                 </form>
             </div>
