@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AddStudentsController;
+use App\Http\Controllers\BbaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,9 +30,22 @@ Route::get('/student', function () {
     return view('student_dashboard');
 })->middleware(['auth', 'verified'])->name('student_dashboard');
 
+//Admin-Dashboard
+
 Route::get('/admin', function () {
     return view('admin_dashboard');
 })->middleware(['auth', 'verified'])->name('admin_dashboard');
+
+
+
+//Add Students//
+Route::get('/addstudent', [AddStudentsController::class, 'addstudent']);
+
+//bba//
+Route::get('/bba', [BbaController::class, 'bba']);
+
+
+
 
 
 Route::middleware('auth')->group(function () {
