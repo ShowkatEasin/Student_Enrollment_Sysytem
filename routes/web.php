@@ -4,7 +4,15 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AddStudentsController;
+use App\Http\Controllers\CseController;
 use App\Http\Controllers\BbaController;
+use App\Http\Controllers\llbController;
+use App\Http\Controllers\EteController;
+use App\Http\Controllers\EeeController;
+use App\Http\Controllers\TutionFeeController;
+use App\Http\Controllers\ResultController;
+use App\Http\Controllers\AllStudentsController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +49,34 @@ Route::get('/admin', function () {
 //Add Students//
 Route::get('/addstudent', [AddStudentsController::class, 'addstudent']);
 
+//cse//
+Route::get('/cse', [CseController::class, 'cse']);
+
 //bba//
 Route::get('/bba', [BbaController::class, 'bba']);
+
+//llb//
+Route::get('/llb', [llbController::class, 'llb']);
+
+//ete//
+Route::get('/ete', [EteController::class, 'ete']);
+
+//eee//
+Route::get('/eee', [EeeController::class, 'eee']);
+
+//tution fee//
+Route::get('/tutionfee', [TutionFeeController::class, 'tutionfee']);
+
+//Result//
+Route::get('/result', [ResultController::class, 'result']);
+
+//Result//
+Route::get('/allstudent', [AllStudentsController::class, 'allstudent']);
+
+//Result//
+Route::get('/teachers', [TeacherController::class, 'teachers']);
+
+
 
 
 
