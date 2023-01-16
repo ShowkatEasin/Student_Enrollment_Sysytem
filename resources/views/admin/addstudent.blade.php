@@ -372,7 +372,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Password</label>
-                                    <input type="date" class="form-control p-input" name="student_password" placeholder="Enter Student Password">
+                                    <input type="password" class="form-control p-input" name="student_password" placeholder="Enter Student Password">
                                 </div>
 
 
@@ -390,7 +390,7 @@
 
                                 <div class="form-group">
                                   <label for="exampleInputPassword1">Admission Year</label>
-                                  <input type="number" class="form-control p-input" name="admission_year" placeholder="Enter Student Admission Year">
+                                  <input type="date" class="form-control p-input" name="admission_year" placeholder="Enter Student Admission Year">
                               </div>
 
                               <div class="form-group">

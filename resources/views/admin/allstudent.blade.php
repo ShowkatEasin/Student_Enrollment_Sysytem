@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Add Student</title>
+  <title> All Student List</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
@@ -330,170 +330,50 @@
     <h1 class="page-title">Data table</h1>
     <div class="card">
       <div class="card-body">
+      <form method="POST" action="/allstudent">
         <h2 class="card-title">Data table</h2>
         <div class="row">
           <div class="col-12">
             <table id="order-listing" class="table table-striped" style="width:100%;">
               <thead>
                 <tr>
-                    <th>SL No.</th>
-                    <th>Student Name</th>
                     <th>Student Roll</th>
-                    <th>Fathers Name</th>
-                    <th>Mothers Name</th>
+                    <th>Student Name</th>
+                    <th>Phone </th>
                     <th>Email</th>
-                    <th>Phone</th>
                     <th>Address</th>
-                    <th>Password</th>
                     <th>Department</th>
-                    <th>Admission Year</th>
+                    <th>Action</th>
+                    
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>27/08/12</td>
-                    <td>Edinburgh</td>
-                    <td>New York</td>
-                    <td>$1500</td>
-                    <td>$3200</td>
-                    <td>
-                      <label class="badge badge-info">On hold</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>14/05/15</td>
-                    <td>Doe</td>
-                    <td>Brazil</td>
-                    <td>$4500</td>
-                    <td>$7500</td>
-                    <td>
-                      <label class="badge badge-danger">Pending</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>27/03/14</td>
-                    <td>Sam</td>
-                    <td>Tokyo</td>
-                    <td>$2100</td>
-                    <td>$6300</td>
-                    <td>
-                      <label class="badge badge-success">Closed</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>27/03/14</td>
-                    <td>Sam</td>
-                    <td>Tokyo</td>
-                    <td>$2100</td>
-                    <td>$6300</td>
-                    <td>
-                      <label class="badge badge-success">Closed</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>27/03/14</td>
-                    <td>Sam</td>
-                    <td>Tokyo</td>
-                    <td>$2100</td>
-                    <td>$6300</td>
-                    <td>
-                      <label class="badge badge-success">Closed</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>27/03/14</td>
-                    <td>Sam</td>
-                    <td>Tokyo</td>
-                    <td>$2100</td>
-                    <td>$6300</td>
-                    <td>
-                      <label class="badge badge-info">On-hold</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>27/03/14</td>
-                    <td>Cris</td>
-                    <td>Tokyo</td>
-                    <td>$2100</td>
-                    <td>$6300</td>
-                    <td>
-                      <label class="badge badge-success">Closed</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>12/03/14</td>
-                    <td>Tim</td>
-                    <td>Italy</td>
-                    <td>$6300</td>
-                    <td>$2100</td>
-                    <td>
-                      <label class="badge badge-info">On-hold</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>27/10/15</td>
-                    <td>John</td>
-                    <td>Tokyo</td>
-                    <td>$2100</td>
-                    <td>$6300</td>
-                    <td>
-                      <label class="badge badge-success">Closed</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>27/06/14</td>
-                    <td>Tom</td>
-                    <td>Germany</td>
-                    <td>$1100</td>
-                    <td>$2300</td>
-                    <td>
-                      <label class="badge badge-danger">Pending</label>
-                    </td>
-                    <td>
-                      <button class="btn btn-outline-primary">View</button>
-                    </td>
-                </tr>
+                
+             
+
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+                
+                <td>
+                  <button class="btn btn-outline-primary">View</button>
+                  <button class="btn btn-outline-warning">Edit</button>
+                  <button class="btn btn-outline-danger">Delete</button>
+                </td>
+            </tr>
+                  
+             
+                
               </tbody>
             </table>
           </div>
         </div>
+      </form>
       </div>
     </div>
   </div>
@@ -517,6 +397,9 @@
   <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
   <!-- End plugin js for this page-->
+  <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+  <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+  <script src="js/data-table.js"></script>
   <!-- inject:js -->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>
