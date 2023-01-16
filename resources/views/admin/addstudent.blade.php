@@ -332,8 +332,8 @@
                 <div class="col-12 col-lg-6 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            <h2 class="card-title">Basic form elements</h2>
-                            <form class="forms-sample" method="post" action="/save_student" enctype="multipart/form-data">
+                            <h2 class="card-title">Student Form</h2>
+                            <form action="{{ URL::to('/savestudent') }}" method="post"  class="forms-sample" enctype="multipart/form-data">
                               @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Student Name</label>
@@ -376,7 +376,7 @@
                                 </div>
 
 
-                                <div class="form-group">
+                              {{--   <div class="form-group">
                                     <label>Upload file</label>
                                     <div class="row">
                                       <div class="col-12">
@@ -385,7 +385,7 @@
                                         <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
                                       </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
 
                                 <div class="form-group">
@@ -396,11 +396,11 @@
                               <div class="form-group">
                                 <label for="exampleInputPassword1">Student Department</label>
                                 <select class="form-control p-input" name="student_department">
-                                 <option value="1">CSE</option>
-                                 <option value="2">EEE</option>
-                                 <option value="3">ETE</option>
-                                 <option value="4">BBA</option>
-                                 <option value="5">LLB</option>
+                                 <option>CSE</option>
+                                 <option>EEE</option>
+                                 <option>ETE</option>
+                                 <option>BBA</option>
+                                 <option>LLB</option>
                                 </select>
                               </div>
 

@@ -14,7 +14,7 @@ use App\Http\Controllers\TutionFeeController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\AllStudentsController;
 use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\SaveStudentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -49,10 +49,11 @@ Route::get('/admin', function () {
 
 
 //Add Students//
+
 Route::get('/addstudent', [AddStudentsController::class, 'addstudent']);
 
-//Save Students//
-Route::post('/savestudent', [SaveStudentController::class, 'savestudent']);
+Route::post('/savestudent', [AddStudentsController::class, 'savestudent']);
+
 
 //cse//
 Route::get('/cse', [CseController::class, 'cse']);
@@ -78,7 +79,7 @@ Route::get('/result', [ResultController::class, 'result']);
 //Result//
 Route::get('/allstudent', [AllStudentsController::class, 'allstudent']);
 
-//Result//
+//teacher//
 Route::get('/teachers', [TeacherController::class, 'teachers']);
 
 
