@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Admin Page</title>
+  <title> All Student List</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
@@ -197,7 +197,7 @@
               </a>
               <a class="dropdown-item" href="#">
                 <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
+                    <h1>Add Student</h1>
                   <span class="badge badge-primary">&nbsp;</span>
                 </div>
                 <div class="sender">
@@ -207,7 +207,7 @@
               </a>
               <a class="dropdown-item" href="#">
                 <div class="sender-img">
-                  <img src="http://via.placeholder.com/47x47" alt="">
+                    <h1>Add Student</h1>
                   <span class="badge badge-warning">&nbsp;</span>
                 </div>
                 <div class="sender">
@@ -231,7 +231,7 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <div class="user-info">
             <div class="profile">
-              <img src="http://via.placeholder.com/47x47" alt="">
+             <h1>Add Student</h1>
             </div>
             <div class="details">
               <p class="user-name">Showkat Osman</p>
@@ -250,7 +250,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/add">
+              <a class="nav-link" href="/addstudent">
                 <i class="mdi mdi-puzzle menu-icon"></i>
                 <span class="menu-title">Add Student</span>
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
@@ -320,61 +320,69 @@
             
           </ul>
         </nav>
-        <!-- partial -->
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-sm-6 col-md-3 grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <h2 class="card-title">All Students</h2>
-                </div>
-                <div class="dashboard-chart-card-container">
-                  <div id="dashboard-card-chart-1" class="card-float-chart"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <h2 class="card-title">All Teachers</h2>
-                </div>
-                <div class="dashboard-chart-card-container">
-                  <div id="dashboard-card-chart-2" class="card-float-chart"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <h2 class="card-title">Tution Fee</h2>
-                </div>
-                <div class="dashboard-chart-card-container">
-                  <div id="dashboard-card-chart-3" class="card-float-chart"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <h2 class="card-title">Revenue</h2>
-                </div>
-                <div class="dashboard-chart-card-container">
-                  <div id="dashboard-card-chart-4" class="card-float-chart"></div>
-                </div>
-              </div>
-            </div>
+
+
+                     {{-- FORM Starts --}}
+
+
+       <!-- partial -->
+<div class="content-wrapper">
+    <h1 class="page-title">Data table</h1>
+    <div class="card">
+      <div class="card-body">
+      <form method="POST" action="/allstudent">
+        <h2 class="card-title">Data table</h2>
+        <div class="row">
+          <div class="col-12">
+            <table id="order-listing" class="table table-striped" style="width:100%;">
+              <thead>
+
+             
+
+                <tr>
+                    <th>SL No.</th>
+                    <th>Student Name</th>
+                    <th>Student Roll</th>
+                    <th>Phone </th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Department</th>
+                    <th>Action</th>  
+                </tr>
+               
+              </thead>
+              <tbody>
+                
+                @foreach ($tudent_tbl as $info )
+              <tr>
+                
+                <td>{{ $loop->index+1 }}</td>
+                <td>{{ $info->student_name }}</td>
+                <td>{{ $info->student_roll }}</td>
+                <td>{{ $info->student_email }}</td>
+                <td>{{ $info->student_phone }}</td>
+                <td>{{ $info->student_address }}</td>
+                <td>{{ $info->student_department }}</td>
+                <td>{{ $info->admission_year }}</td>
+                <td>
+                  <button class="btn btn-outline-primary">View</button>
+                  <button class="btn btn-outline-warning">Edit</button>
+                  <button class="btn btn-outline-danger">Delete</button>
+                </td>
+            </tr>
+            @endforeach
+                  
+             
+                
+              </tbody>
+            </table>
           </div>
-          
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-       
-        <!-- partial -->
+        </div>
+      </form>
       </div>
-      <!-- row-offcanvas ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
+                
 
   <!-- plugins:js -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -394,6 +402,9 @@
   <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
   <!-- End plugin js for this page-->
+  <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+  <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+  <script src="js/data-table.js"></script>
   <!-- inject:js -->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>

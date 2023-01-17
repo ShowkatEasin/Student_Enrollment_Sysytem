@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> All Student List</title>
+  <title> Add Student</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
@@ -325,58 +325,97 @@
                      {{-- FORM Starts --}}
 
 
-       <!-- partial -->
-<div class="content-wrapper">
-    <h1 class="page-title">Data table</h1>
-    <div class="card">
-      <div class="card-body">
-      <form method="POST" action="/allstudent">
-        <h2 class="card-title">Data table</h2>
-        <div class="row">
-          <div class="col-12">
-            <table id="order-listing" class="table table-striped" style="width:100%;">
-              <thead>
-                <tr>
-                    <th>Student Roll</th>
-                    <th>Student Name</th>
-                    <th>Phone </th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Department</th>
-                    <th>Action</th>
-                    
-                </tr>
-              </thead>
-              <tbody>
-                
-             
+        <!-- partial -->
+        <div class="content-wrapper">
+            <h1 class="page-title">Basic elements</h1>
+            <div class="row">
+                <div class="col-12 col-lg-6 grid-margin">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Student Form</h2>
+                            <form action="{{ URL::to('/show') }}" method="post"  class="forms-sample" enctype="multipart/form-data">
+                              @csrf
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Student Name</label>
+                                    <input type="text" class="form-control p-input" name="student_name" aria-describedby="emailHelp" placeholder="Enter Student Name">
+                                </div>
 
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Student Roll</label>
+                                    <input type="text" class="form-control p-input" name="student_roll" placeholder="Enter Student Roll">
+                                </div>
+
+                                {{-- <div class="form-group">
+                                    <label for="exampleInputPassword1">Student Father's name</label>
+                                    <input type="text" class="form-control p-input" name="student_fathername" placeholder="Enter Student Father's Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Student Mother's name</label>
+                                    <input type="text" class="form-control p-input" name="student_mothername" placeholder="Enter Student Mother's Name">
+                                </div> --}}
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Student Email</label>
+                                    <input type="email" class="form-control p-input" name="student_email" placeholder="Enter Student Email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Student Phone</label>
+                                    <input type="number" class="form-control p-input" name="student_phone" placeholder="Enter Student Phone">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Student Address</label>
+                                    <input type="text" class="form-control p-input" name="student_address" placeholder="Enter Student Address">
+                                </div>
+
+                                {{-- <div class="form-group">
+                                    <label for="exampleInputPassword1">Student Password</label>
+                                    <input type="password" class="form-control p-input" name="student_password" placeholder="Enter Student Password">
+                                </div>
+
+ --}}
+                              {{--   <div class="form-group">
+                                    <label>Upload file</label>
+                                    <div class="row">
+                                      <div class="col-12">
+                                        <label for="exampleInputFile2" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Image</label>
+                                        <input type="file" class="form-control-file" name = "student_image" id="exampleInputFile2" aria-describedby="fileHelp">
+                                        <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                                      </div>
+                                    </div>
+                                </div> --}}
+
+
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Admission Year</label>
+                                  <input type="date" class="form-control p-input" name="admission_year" placeholder="Enter Student Admission Year">
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">Student Department</label>
+                                <select class="form-control p-input" name="student_department">
+                                 <option>CSE</option>
+                                 <option>EEE</option>
+                                 <option>ETE</option>
+                                 <option>BBA</option>
+                                 <option>LLB</option>
+                                </select>
+                              </div>
+
+                                
+                                   
+                               
+
+
+                                <button type="submit" class="btn btn-success btn-block">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 
                 
-                <td>
-                  <button class="btn btn-outline-primary">View</button>
-                  <button class="btn btn-outline-warning">Edit</button>
-                  <button class="btn btn-outline-danger">Delete</button>
-                </td>
-            </tr>
-                  
-             
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </form>
-      </div>
-    </div>
-  </div>
                 
 
   <!-- plugins:js -->
@@ -397,9 +436,6 @@
   <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
   <!-- End plugin js for this page-->
-  <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
-  <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
-  <script src="js/data-table.js"></script>
   <!-- inject:js -->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>

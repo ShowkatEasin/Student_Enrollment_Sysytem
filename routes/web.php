@@ -14,6 +14,9 @@ use App\Http\Controllers\TutionFeeController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\AllStudentsController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\ShowDataController;
+use App\Http\Controllers\MainController;
+
 
 
 /*
@@ -36,6 +39,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//student-Dashboard
+
 Route::get('/student', function () {
     return view('student_dashboard');
 })->middleware(['auth', 'verified'])->name('student_dashboard');
@@ -49,38 +54,18 @@ Route::get('/admin', function () {
 
 
 //Add Students//
+Route::get('/add', [MainController::class, 'add']);
 
-Route::get('/addstudent', [AddStudentsController::class, 'addstudent']);
+//Create Students//
+Route::post('/create', [MainController::class, 'create']);
 
-Route::post('/savestudent', [AddStudentsController::class, 'savestudent']);
+//store Students//
+Route::post('/store', [MainController::class, 'store']);
 
 
-//cse//
-Route::get('/cse', [CseController::class, 'cse']);
 
-//bba//
-Route::get('/bba', [BbaController::class, 'bba']);
 
-//llb//
-Route::get('/llb', [llbController::class, 'llb']);
 
-//ete//
-Route::get('/ete', [EteController::class, 'ete']);
-
-//eee//
-Route::get('/eee', [EeeController::class, 'eee']);
-
-//tution fee//
-Route::get('/tutionfee', [TutionFeeController::class, 'tutionfee']);
-
-//Result//
-Route::get('/result', [ResultController::class, 'result']);
-
-//Result//
-Route::get('/allstudent', [AllStudentsController::class, 'allstudent']);
-
-//teacher//
-Route::get('/teachers', [TeacherController::class, 'teachers']);
 
 
 
