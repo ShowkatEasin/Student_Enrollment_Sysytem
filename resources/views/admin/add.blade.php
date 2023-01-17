@@ -250,7 +250,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/addstudent">
+              <a class="nav-link" href="/add">
                 <i class="mdi mdi-puzzle menu-icon"></i>
                 <span class="menu-title">Add Student</span>
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
@@ -333,7 +333,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">Student Form</h2>
-                            <form action="{{ URL::to('/savestudent') }}" method="post"  class="forms-sample" enctype="multipart/form-data">
+                            <form action="{{ URL::to('/index') }}" method="post"  class="forms-sample" enctype="multipart/form-data">
                               @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Student Name</label>

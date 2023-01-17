@@ -51,7 +51,8 @@ Route::get('/admin', function () {
     return view('admin_dashboard');
 })->middleware(['auth', 'verified'])->name('admin_dashboard');
 
-
+//Create Index//
+Route::get('/index', [MainController::class, 'index']);
 
 //Add Students//
 Route::get('/add', [MainController::class, 'add']);
