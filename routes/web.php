@@ -51,17 +51,29 @@ Route::get('/admin', function () {
     return view('admin_dashboard');
 })->middleware(['auth', 'verified'])->name('admin_dashboard');
 
-//Create Index//
+
+
+
+
+//Route::resource('admin', CompanyController::class);
+
+
+
+
+
+
+
+//Index Index//
 Route::get('/index', [MainController::class, 'index']);
 
-//Add Students//
-Route::get('/add', [MainController::class, 'add']);
-
 //Create Students//
-Route::post('/create', [MainController::class, 'create']);
+Route::get('/create', [MainController::class, 'create']);
 
 //store Students//
 Route::post('/store', [MainController::class, 'store']);
+
+//Edit Students//
+Route::get('/edit', [MainController::class, 'edit']);
 
 
 

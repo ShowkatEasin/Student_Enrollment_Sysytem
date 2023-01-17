@@ -250,7 +250,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/add">
+              <a class="nav-link" href="/create">
                 <i class="mdi mdi-puzzle menu-icon"></i>
                 <span class="menu-title">Add Student</span>
                 <span class="badge badge-danger badge-pill ml-auto">New</span>

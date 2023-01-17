@@ -250,7 +250,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/add">
+              <a class="nav-link" href="/create">
                 <i class="mdi mdi-puzzle menu-icon"></i>
                 <span class="menu-title">Add Student</span>
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
@@ -345,7 +345,7 @@
                                     <input type="text" class="form-control p-input" name="student_roll" placeholder="Enter Student Roll">
                                 </div>
 
-                                <div class="form-group">
+                               {{--  <div class="form-group">
                                     <label for="exampleInputPassword1">Student Father's name</label>
                                     <input type="text" class="form-control p-input" name="student_fathername" placeholder="Enter Student Father's Name">
                                 </div>
@@ -354,7 +354,7 @@
                                     <label for="exampleInputPassword1">Student Mother's name</label>
                                     <input type="text" class="form-control p-input" name="student_mothername" placeholder="Enter Student Mother's Name">
                                 </div>
-
+ --}}
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Email</label>
                                     <input type="email" class="form-control p-input" name="student_email" placeholder="Enter Student Email">
@@ -370,10 +370,10 @@
                                     <input type="text" class="form-control p-input" name="student_address" placeholder="Enter Student Address">
                                 </div>
 
-                                <div class="form-group">
+                               {{--  <div class="form-group">
                                     <label for="exampleInputPassword1">Student Password</label>
                                     <input type="password" class="form-control p-input" name="student_password" placeholder="Enter Student Password">
-                                </div>
+                                </div> --}}
 
 
                               {{--   <div class="form-group">
@@ -388,10 +388,10 @@
                                 </div> --}}
 
 
-                                <div class="form-group">
+                              {{--   <div class="form-group">
                                   <label for="exampleInputPassword1">Admission Year</label>
                                   <input type="date" class="form-control p-input" name="admission_year" placeholder="Enter Student Admission Year">
-                              </div>
+                              </div> --}}
 
                               <div class="form-group">
                                 <label for="exampleInputPassword1">Student Department</label>

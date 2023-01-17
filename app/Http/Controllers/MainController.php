@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\student_info;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -13,13 +13,14 @@ class MainController extends Controller
      */
     public function index()
     {
-       return view('admin.index');
+        $student = student_info::orderBy('id','desc')->paginate(5);
+        return view('admin.index', compact('student'));
     }
 
 
-    public function add()
+    public function create()
     {
-       return view('admin.add');
+       return view ('admin.create');
     }
 
     /**
@@ -27,10 +28,7 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-       return view ('admin.create');
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -40,7 +38,18 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+           
+            'student_name' => 'required',
+            'student_roll' => 'required',
+            'student_phone' => 'required',
+            'student_email' => 'required',
+            'student_address' => 'required',
+            'student_department' => 'required',
+        ]);
+        
+        student_info::create($request->post());
+        return redirect()->route('admin.index')->with('success','Data has been created successfully.');
     }
 
     /**
@@ -49,9 +58,9 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(student_info $student)
     {
-        //
+        return view('admin.show',compact('student'));
     }
 
     /**
@@ -60,9 +69,9 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(student_info $student)
     {
-        //
+        return view('admin.edit',compact('student'));
     }
 
     /**
@@ -72,9 +81,17 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, student_info $student)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+        ]);
+        
+        $student->fill($request->post())->save();
+
+        return redirect()->route('admin.index')->with('success','Data Has Been updated successfully');
     }
 
     /**
@@ -83,8 +100,9 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(student_info $student)
     {
-        //
+        $student->delete();
+        return redirect()->route('admin.index')->with('success','Company has been deleted successfully');
     }
 }
