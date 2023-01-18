@@ -84,9 +84,12 @@ class MainController extends Controller
     public function update(Request $request, student_info $student)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'address' => 'required',
+            'student_name' => 'required',
+            'student_roll' => 'required',
+            'student_phone' => 'required',
+            'student_email' => 'required',
+            'student_address' => 'required',
+            'student_department' => 'required',
         ]);
         
         $student->fill($request->post())->save();
