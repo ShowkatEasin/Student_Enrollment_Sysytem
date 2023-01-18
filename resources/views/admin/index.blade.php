@@ -328,7 +328,6 @@
     <h1 class="page-title">Data table</h1>
     <div class="card">
       <div class="card-body">
-      <form action="" method="POST" >
         <h2 class="card-title">Data table</h2>
         <div class="row">
           <div class="col-12">
@@ -351,15 +350,17 @@
                     <th>Department</th>
                     <th>Action</th>  
                 </tr>
-
+               
                
               </thead>
               <tbody>
+
+                @php $sl=1; @endphp
                 
-                @foreach ($student as $student) 
+                @foreach ($student_info as $student) 
 
               <tr>
-                <td>{{ $student->id }}</td>
+                <td>{{$sl}}</td> 
                 <td>{{ $student->student_name }}</td>
                 <td>{{ $student->student_roll }}</td>
                 <td>{{ $student->student_phone }}</td>
@@ -370,8 +371,8 @@
                 
                 <td>
 
-                  <form action="{{ route('admin.destroy',$student->id) }}" method="Post">
-                    <a class="btn btn-outline-warning" href="{{ route('admin.edit',$student->id) }}">Edit</a>
+                  <form action="{{ URL:: to ('/index')}}" method="Post">
+                    <a class="btn btn-outline-primary" href="{{ URL:: to ('/edit')}}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-outline-danger">Delete</button>
@@ -380,16 +381,17 @@
                   <button class="btn btn-outline-danger">Delete</button> --}}
                 </td>
             </tr>
+
+            @php $sl++; @endphp
             @endforeach
  
               </tbody>
             </table>
           </div>
         </div>
-      </form>
       </div>
     </div>
-    {!! $student->links() !!}
+    
   </div>
                 
 

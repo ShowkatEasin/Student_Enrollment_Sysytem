@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\student_info;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class MainController extends Controller
 {
@@ -13,8 +15,9 @@ class MainController extends Controller
      */
     public function index()
     {
-        $student = student_info::orderBy('id','desc')->paginate(5);
-        return view('admin.index', compact('student'));
+        return view('admin.index', [
+            'student_info' => DB::table('student_infos')->paginate(15)
+        ]);
     }
 
 
@@ -47,10 +50,22 @@ class MainController extends Controller
             'student_address' => 'required',
             'student_department' => 'required',
         ]);
-        
-        student_info::create($request->post());
-        return redirect()->route('admin.index')->with('success','Data has been created successfully.');
-    }
+
+  
+
+        $student = new student_info;
+        $student->student_name = $request->student_name;
+        $student->student_roll = $request->student_roll;
+        $student->student_phone = $request->student_phone;
+        $student->student_email = $request->student_email;
+        $student->student_address = $request->student_address;
+        $student->student_department = $request->student_department;
+       
+        $student->save();
+        return redirect()->route('admin.index')
+        ->with('success','Company has been created successfully.');
+    }  
+  
 
     /**
      * Display the specified resource.
