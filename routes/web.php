@@ -75,7 +75,7 @@ Route::post('/store', [MainController::class, 'store']);
 //Edit Students//
 Route::get('/edit', [MainController::class, 'edit']);
 
-Route::post('/delete', [MainController::class, 'destroy']);
+Route::delete('/delete', [MainController::class, 'destroy']);
 
 
 
