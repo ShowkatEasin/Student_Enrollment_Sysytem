@@ -108,7 +108,7 @@ class MainController extends Controller
         
         $student->fill($request->post())->save();
 
-        return redirect()->route('admin.index')->with('success','Data Has Been updated successfully');
+        return redirect()->action([MainController::class, 'index']);
     }
 
     /**
@@ -120,6 +120,6 @@ class MainController extends Controller
     public function destroy(student_info $student)
     {
         $student->delete();
-        return redirect()->route('admin.index')->with('success','Company has been deleted successfully');
+        return redirect()->route('admin.index')->with('success','Data has been deleted successfully');
     }
 }

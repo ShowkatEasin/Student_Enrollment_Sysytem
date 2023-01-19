@@ -327,12 +327,12 @@
 
         <!-- partial -->
         <div class="content-wrapper">
-            <h1 class="page-title">Basic elements</h1>
+            <h1 class="page-title">Add New Student</h1>
             <div class="row">
                 <div class="col-12 col-lg-6 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            <h2 class="card-title">Student Form</h2>
+                            <h2 class="card-title">New Student Form</h2>
 
 
                             <form action="{{ URL::to('/store') }}" method="POST" enctype="multipart/form-data"  class="forms-sample" enctype="multipart/form-data">
