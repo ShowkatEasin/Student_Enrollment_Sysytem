@@ -53,8 +53,6 @@ class MainController extends Controller
             'student_department' => 'required',
         ]);
 
-  
-
         $student = new student_info;
         $student->student_name = $request->student_name;
         $student->student_roll = $request->student_roll;
@@ -62,10 +60,11 @@ class MainController extends Controller
         $student->student_email = $request->student_email;
         $student->student_address = $request->student_address;
         $student->student_department = $request->student_department;
-       
         $student->save();
-        return redirect()->route('admin.index')
-        ->with('success','Company has been created successfully.');
+
+        return redirect()->action([MainController::class, 'index'])
+        //return redirect()->route('admin.index');
+       ->with('success','Student Data has been created successfully.');
     }  
     /**
      * Display the specified resource.
