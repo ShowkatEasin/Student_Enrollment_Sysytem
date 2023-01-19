@@ -335,7 +335,7 @@
                             <h2 class="card-title">Student Form</h2>
 
 
-                            <form action="{{ url('/store') }}" method="POST" enctype="multipart/form-data"  class="forms-sample" enctype="multipart/form-data">
+                            <form action="{{ URL::to('/store') }}" method="POST" enctype="multipart/form-data"  class="forms-sample" enctype="multipart/form-data">
                               @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Student Name</label>
@@ -346,7 +346,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Student Roll</label>
+                                    <label for="exampleInputPassword1">Student ID</label>
                                     <input type="text" class="form-control p-input" name="student_roll" placeholder="Enter Student Roll">
                                 </div>
 

@@ -15,9 +15,11 @@ class MainController extends Controller
      */
     public function index()
     {
+
+       
         return view('admin.index', [
             'student_info' => DB::table('student_infos')->paginate(15)
-        ]);
+        ]); 
     }
 
 
@@ -65,8 +67,6 @@ class MainController extends Controller
         return redirect()->route('admin.index')
         ->with('success','Company has been created successfully.');
     }  
-  
-
     /**
      * Display the specified resource.
      *
@@ -75,7 +75,7 @@ class MainController extends Controller
      */
     public function show(student_info $student)
     {
-        return view('admin.show',compact('student'));
+        return view('admin.index',compact('student'));
     }
 
     /**

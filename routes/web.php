@@ -70,10 +70,12 @@ Route::get('/index', [MainController::class, 'index']);
 Route::get('/create', [MainController::class, 'create']);
 
 //store Students//
-Route::post('/store', [MainController::class, 'store']);
+Route::post('/store', [MainController::class, 'store']); 
 
 //Edit Students//
 Route::get('/edit', [MainController::class, 'edit']);
+
+
 
 
 

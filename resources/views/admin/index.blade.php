@@ -321,8 +321,7 @@
 
 
                      {{-- FORM Starts --}}
-
-
+                     
        <!-- partial -->
 <div class="content-wrapper">
     <h1 class="page-title">Data table</h1>
@@ -343,7 +342,7 @@
                 <tr>
                     <th>SL No.</th>
                     <th>Student Name</th>
-                    <th>Student Roll</th>
+                    <th>Student ID</th>
                     <th>Phone </th>
                     <th>Email</th>
                     <th>Address</th>
@@ -371,7 +370,7 @@
                 
                 <td>
 
-                  <form action="{{ URL:: to ('/index')}}" method="Post">
+                  <form action="{{ URL:: to ('/store')}}" method="Post">
                     <a class="btn btn-outline-primary" href="{{ URL:: to ('/edit')}}">Edit</a>
                     @csrf
                     @method('DELETE')
