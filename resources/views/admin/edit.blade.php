@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Add Student</title>
+  <title> Edit Student Data</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
@@ -335,9 +335,8 @@
                             <h2 class="card-title">Edit Student Form</h2>
 
 
-                            <form action="{{URL::to('/update', $student->id)}}" method="POST" enctype="multipart/form-data"  class="forms-sample" enctype="multipart/form-data">
+                            <form action="{{ URL::to('/edit', $student-> student_id) }}" method="POST" enctype="multipart/form-data"  class="forms-sample" enctype="multipart/form-data">
                               @csrf
-                              @method('PUT')
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Student Name</label>
                                     <input type="text" class="form-control p-input" name="student_name" aria-describedby="emailHelp"

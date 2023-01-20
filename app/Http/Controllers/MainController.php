@@ -18,7 +18,7 @@ class MainController extends Controller
 
        
         return view('admin.index', [
-            'student_info' => DB::table('student_infos')->paginate(15)
+            'student_info' => DB::table('student_infos')->paginate(50) 
         ]); 
     }
 
@@ -74,7 +74,7 @@ class MainController extends Controller
      */
     public function show(student_info $student)
     {
-        return view('admin.index',compact('student'));
+        return view('admin.index',compact('indexdata'));
     }
 
     /**
@@ -83,9 +83,12 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(student_info $student)
+    public function edit (student_info $student) 
     {
-        return view('admin.edit',compact('student'));
+    return view('admin.edit', compact('student'));
+        
+
+        //return view('admin.edit',compact('student'));
     }
 
     /**
@@ -95,8 +98,10 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, student_info $student)
+    public function update(Request $request, student_info $id)
     {
+        $student=student_info::find($id);
+
         $request->validate([
             'student_name' => 'required',
             'student_roll' => 'required',
@@ -106,19 +111,18 @@ class MainController extends Controller
             'student_department' => 'required',
         ]);
 
-        $student = new student_info;
+       // $student = new student_info;
         $student-> student_name = $request-> student_name ;
         $student-> student_roll = $request-> student_roll ;
         $student-> student_phone = $request-> student_phone ;
         $student-> student_email = $request-> student_email ;
         $student-> student_address = $request-> student_address ;
         $student-> student_department = $request-> student_department ;
-
-        $student->save();
+        $student->update();
 
         return redirect()->action([MainController::class, 'index'])
-        
-       ->with('success','Student Data has been Updated successfully.');
+        //return redirect()->route('admin.index');
+       ->with('success','Student Data has been Updates successfully.');
         
         //$student->fill($request->post())->save();
         //return redirect()->action([MainController::class, 'index']);

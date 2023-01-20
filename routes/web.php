@@ -52,28 +52,19 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified'])->name('admin_dashboard');
 
 
-
-
-
-//Route::resource('admin', CompanyController::class);
-
-
-
-
-
-
-
  //Index Index//
-Route::get('/index', [MainController::class, 'index']);
+Route::get('/index', [MainController::class, 'index'])->name("indexdata");
 
 //Create Students//
-Route::get('/create', [MainController::class, 'create']);
+Route::get('/create', [MainController::class, 'create'])->name("createdata");
 
 //store Students//
-Route::post('/store', [MainController::class, 'store']); 
+Route::post('/store', [MainController::class, 'store'])->name("storedata");
 
 //Edit Students//
-Route::get('/edit', [MainController::class, 'edit']);
+Route::get('/edit/{id}', [MainController::class, 'edit'])->name("editdata");
+
+Route::get('/update/{id}', [MainController::class, 'update'])->name("updatedata");
 
 //Route::delete('/delete', [MainController::class, 'destroy']);
 

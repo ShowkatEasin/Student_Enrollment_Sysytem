@@ -353,6 +353,8 @@
                
               </thead>
               <tbody>
+                <form action="{{ URL::to ('/store')}}" method="POST">
+                  @csrf
 
                 @php $sl=1; @endphp
                 
@@ -369,15 +371,11 @@
                
                 
                 <td>
+                     <a class="btn btn-outline-primary" href="{{URL::to('/edit', $student->student_id) }}">Edit</a>
 
-                  <form action="{{ URL:: to ('/store')}}" method="Post">
-                    <a class="btn btn-outline-primary" href="{{URL::to ('update')}}">Edit</a>
-                    @csrf
-                    @method('PUT')
-                    <a type="submit" class="btn btn-outline-danger href="{{ URL:: to ('/delete')}}">Delete</button>
+                     <a type="submit" class="btn btn-outline-danger href="{{ URL:: to ('/delete')}}">Delete</a> 
                 </form>
-                  {{-- <button class="btn btn-outline-warning">Edit</button>
-                  <button class="btn btn-outline-danger">Delete</button> --}}
+                  
                 </td>
             </tr>
 
