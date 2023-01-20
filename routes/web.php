@@ -63,7 +63,7 @@ Route::get('/admin', function () {
 
 
 
-//Index Index//
+ //Index Index//
 Route::get('/index', [MainController::class, 'index']);
 
 //Create Students//
@@ -75,7 +75,10 @@ Route::post('/store', [MainController::class, 'store']);
 //Edit Students//
 Route::get('/edit', [MainController::class, 'edit']);
 
-Route::delete('/delete', [MainController::class, 'destroy']);
+//Route::delete('/delete', [MainController::class, 'destroy']);
+
+
+
 
 
 

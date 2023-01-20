@@ -371,10 +371,10 @@
                 <td>
 
                   <form action="{{ URL:: to ('/store')}}" method="Post">
-                    <button class="btn btn-outline-primary" href="{{ URL:: to ('/edit')}}">Edit</button>
+                    <a class="btn btn-outline-primary" href="{{URL::to ('update')}}">Edit</a>
                     @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-outline-danger href="{{ URL:: to ('/delete')}}">Delete</button>
+                    @method('PUT')
+                    <a type="submit" class="btn btn-outline-danger href="{{ URL:: to ('/delete')}}">Delete</button>
                 </form>
                   {{-- <button class="btn btn-outline-warning">Edit</button>
                   <button class="btn btn-outline-danger">Delete</button> --}}

@@ -105,10 +105,23 @@ class MainController extends Controller
             'student_address' => 'required',
             'student_department' => 'required',
         ]);
-        
-        $student->fill($request->post())->save();
 
-        return redirect()->action([MainController::class, 'index']);
+        $student = new student_info;
+        $student-> student_name = $request-> student_name ;
+        $student-> student_roll = $request-> student_roll ;
+        $student-> student_phone = $request-> student_phone ;
+        $student-> student_email = $request-> student_email ;
+        $student-> student_address = $request-> student_address ;
+        $student-> student_department = $request-> student_department ;
+
+        $student->save();
+
+        return redirect()->action([MainController::class, 'index'])
+        
+       ->with('success','Student Data has been Updated successfully.');
+        
+        //$student->fill($request->post())->save();
+        //return redirect()->action([MainController::class, 'index']);
     }
 
     /**

@@ -335,11 +335,13 @@
                             <h2 class="card-title">Edit Student Form</h2>
 
 
-                            <form action="{{ URL::to('/store') }}" method="POST" enctype="multipart/form-data"  class="forms-sample" enctype="multipart/form-data">
+                            <form action="{{URL::to('/update', $student->id)}}" method="POST" enctype="multipart/form-data"  class="forms-sample" enctype="multipart/form-data">
                               @csrf
+                              @method('PUT')
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Student Name</label>
-                                    <input type="text" class="form-control p-input" name="student_name" aria-describedby="emailHelp" placeholder="Enter Student Name">
+                                    <input type="text" class="form-control p-input" name="student_name" aria-describedby="emailHelp"
+                                     placeholder="Enter Student Name" value="{{ $student->student_name }}">
                                     @error('name')
                                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror
@@ -347,7 +349,8 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student ID</label>
-                                    <input type="text" class="form-control p-input" name="student_roll" placeholder="Enter Student Roll">
+                                    <input type="text" class="form-control p-input" name="student_roll" placeholder="Enter Student Roll"
+                                    value="{{ $student->student_roll }}">
                                 </div>
 
                                {{--  <div class="form-group">
@@ -362,17 +365,20 @@
  --}}
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Email</label>
-                                    <input type="email" class="form-control p-input" name="student_email" placeholder="Enter Student Email">
+                                    <input type="email" class="form-control p-input" name="student_email" placeholder="Enter Student Email"
+                                    value="{{ $student->student_email }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Phone</label>
-                                    <input type="number" class="form-control p-input" name="student_phone" placeholder="Enter Student Phone">
+                                    <input type="number" class="form-control p-input" name="student_phone" placeholder="Enter Student Phone"
+                                    value="{{ $student->student_phone }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Address</label>
-                                    <input type="text" class="form-control p-input" name="student_address" placeholder="Enter Student Address">
+                                    <input type="text" class="form-control p-input" name="student_address" placeholder="Enter Student Address"
+                                    value="{{ $student->student_address }}">
                                 </div>
 
                                {{--  <div class="form-group">
@@ -400,7 +406,8 @@
 
                               <div class="form-group">
                                 <label for="exampleInputPassword1">Student Department</label>
-                                <select class="form-control p-input" name="student_department">
+                                <select class="form-control p-input" name="student_department"
+                                value="{{ $student->student_department }}">
                                  <option>CSE</option>
                                  <option>EEE</option>
                                  <option>ETE</option>
@@ -419,6 +426,8 @@
                         </div>
                     </div>
                 </div>
+
+               
                 
                 
                 
