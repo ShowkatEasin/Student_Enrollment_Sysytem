@@ -68,8 +68,7 @@
                             </ul>
                             <h4>User Account</h4>
                             <ul>
-                                <li><a href="{{ route('login') }}/" data-toggle="modal" data-target="#modal1">Sign In</a></li>
-                                <li><a href="{{ route('register') }}/" data-toggle="modal" data-target="#modal2">Register</a></li>
+                                
                             </ul>
                             <h4>All Pages</h4>
                             <ul>
@@ -109,10 +108,8 @@
                     <div class="col-md-12">
                         <div class="ed-com-t1-left">
                             <ul>
-                                <li><a href="#">Contact: Lake Road, Suite 180 Farmington Hills, U.S.A.</a>
-                                </li>
-                                <li><a href="#">Phone: +101-1231-1231</a>
-                                </li>
+                                <li><a href="{{ route('login') }}/" data-toggle="modal" data-target="#modal1">Sign In</a></li>
+                                <li><a href="{{ route('register') }}/" data-toggle="modal" data-target="#modal2">Register</a></li>
                             </ul>
                         </div>
                         <div class="ed-com-t1-right">

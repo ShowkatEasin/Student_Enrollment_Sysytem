@@ -244,7 +244,7 @@
               <span class="nav-link">Main</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="/index">
                 <i class="mdi mdi-gauge menu-icon"></i>
                 <span class="menu-title">All Student</span>
               </a>

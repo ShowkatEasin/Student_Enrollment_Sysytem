@@ -118,8 +118,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="ed-com-t1-social">
-                           
+                        <div class="ed-com-t1-social">           
                         </div>
                     </div>
                 </div>
