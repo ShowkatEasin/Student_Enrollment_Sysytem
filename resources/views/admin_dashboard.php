@@ -244,7 +244,7 @@
               <span class="nav-link">Main</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/index">
+              <a class="nav-link" href="">
                 <i class="mdi mdi-gauge menu-icon"></i>
                 <span class="menu-title">All Student</span>
               </a>
@@ -326,7 +326,7 @@
             <div class="col-sm-6 col-md-3 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h2 class="card-title">All Students</h2>
+                <h2 class="card-title">All Students</h2>
                 </div>
                 <div class="dashboard-chart-card-container">
                   <div id="dashboard-card-chart-1" class="card-float-chart"></div>

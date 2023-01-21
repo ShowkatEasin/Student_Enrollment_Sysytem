@@ -327,7 +327,7 @@
 
         <!-- partial -->
         <div class="content-wrapper">
-            <h1 class="page-title">Add New Student</h1>
+            <h1 class="page-title">Edit Student</h1>
             <div class="row">
                 <div class="col-12 col-lg-6 grid-margin">
                     <div class="card">
@@ -368,12 +368,12 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Phone</label>
-                                    <input type="number" class="form-control p-input" name="student_phone" placeholder="Enter Student Phone">
+                                    <input type="number" class="form-control p-input" name="student_phone" placeholder="Enter Student Phone" value="{{ $student->student_phone }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Address</label>
-                                    <input type="text" class="form-control p-input" name="student_address" placeholder="Enter Student Address">
+                                    <input type="text" class="form-control p-input" name="student_address" placeholder="Enter Student Address"value="{{ $student->student_address }}">
                                 </div>
 
                                {{--  <div class="form-group">
@@ -401,16 +401,17 @@
 
                               <div class="form-group">
                                 <label for="exampleInputPassword1">Student Department</label>
-                                <select class="form-control p-input" name="student_department">
-                                 <option>CSE</option>
-                                 <option>EEE</option>
-                                 <option>ETE</option>
-                                 <option>BBA</option>
-                                 <option>LLB</option>
+                                <select class="form-control p-input" name="student_department" ">
+                                 <option label="Select Department"></option>
+                                 <option value="CSE">CSE</option>
+                                 <option value="EEE">EEE</option>
+                                 <option value="ETE">ETE</option>
+                                 <option value="BBA">BBA</option>
+                                 <option value="LLB">LLB</option>
                                 </select>
                               </div>
 
-                                <button type="submit" class="btn btn-success btn-block">Update</button>
+                                <button type="submit" class="btn btn-info btn-block">Update</button>
                             </form>
                         </div>
                     </div>

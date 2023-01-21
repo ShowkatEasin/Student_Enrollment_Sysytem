@@ -353,34 +353,22 @@
                
               </thead>
               <tbody>
-                <form action="{{ URL::to ('/store')}}" method="POST">
-                  @csrf
-
-                @php $sl=1; @endphp
-                
-                @foreach ($student_info as $student) 
-
+                @csrf
+                @foreach ($students as $key => $student) 
               <tr>
-                <td>{{$sl}}</td> 
+                <td>{{ $key + 1 }}</td> 
                 <td>{{ $student->student_name }}</td>
                 <td>{{ $student->student_roll }}</td>
                 <td>{{ $student->student_phone }}</td>
                 <td>{{ $student->student_email }}</td>
                 <td>{{ $student->student_address }}</td>
                 <td>{{ $student->student_department }}</td>
-               
-                
                 <td>
                      <a class="btn btn-outline-primary" href="{{URL::to('/edit', $student->student_id) }}">Edit</a>
-
-                     <a type="submit" class="btn btn-outline-danger href="{{ URL:: to ('/delete')}}">Delete</a> 
-                </form>
-                  
+                     <a class="btn btn-outline-danger" href="{{ route('student.delete', $student->student_id) }}" >Delete</a> 
                 </td>
             </tr>
-            @php $sl++; @endphp
             @endforeach
- 
               </tbody>
             </table>
           </div>
@@ -421,5 +409,4 @@
   <script src="js/dashboard_1.js"></script>
   <!-- End custom js for this page-->
 </body>
-<!-- Mirrored from www.urbanui.com/salt/jquery/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:32:50 GMT -->
 </html>

@@ -15,11 +15,9 @@ class MainController extends Controller
      */
     public function index()
     {
-
-       
-        return view('admin.index', [
-            'student_info' => DB::table('student_infos')->paginate(50) 
-        ]); 
+        $students = student_info::all();
+        // return $students;
+        return view('admin.index', compact('students')); 
     }
 
 
@@ -98,7 +96,8 @@ class MainController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $request->all();
+        // return $request->all();
+        // dd($request->all());
         // Student Data Validation 
         $request->validate([
             'student_name' => 'required',
@@ -106,21 +105,27 @@ class MainController extends Controller
             'student_phone' => 'required',
             'student_email' => 'required',
             'student_address' => 'required',
-            'student_department' => 'required',
+            // 'student_department' => 'required',
         ]);
 
         //  Student Information Update 
-        $student=student_info::find($id);
-        $student-> student_name = $request-> student_name ;
-        $student-> student_roll = $request-> student_roll ;
-        $student-> student_phone = $request-> student_phone ;
-        $student-> student_email = $request-> student_email ;
-        $student-> student_address = $request-> student_address ;
-        $student-> student_department = $request-> student_department ;
-        $student->update();
+        $student = student_info::where('student_id', $id)->update([
+            'student_name' => $request->student_name,
+            'student_roll' => $request->student_roll,
+            'student_phone' => $request->student_phone,
+            'student_email' => $request->student_email,
+            'student_address' => $request->student_address,
+            'student_department' => $request->student_department,
+        ]);
 
-       
-       return redirect()->route('admin.index')->with('success','Student Data has been Updated successfully.');
+        return redirect()->route('indexdata')->with('success','Data Has Been updated successfully');
+        
+        // if ($student) {
+        //         return redirect()->route('indexdata')->with('success','Data Has Been updated successfully');
+        // } else {
+        //     return redirect()->route('indexdata')->with('error','Data Updated Failed!');
+        // }
+      
         
         //$student->fill($request->post())->save();
         //return redirect()->action([MainController::class, 'index']);
@@ -132,9 +137,9 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(student_info $student)
+    public function destroy($id)
     {
-        $student->delete();
-        return redirect()->route('admin.index')->with('success','Data has been deleted successfully');
+        student_info::where('student_id', $id)->delete();
+        return redirect()->route('indexdata')->with('success','Data has been deleted successfully');
     }
 }

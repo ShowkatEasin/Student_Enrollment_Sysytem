@@ -65,6 +65,7 @@ Route::post('/store', [MainController::class, 'store'])->name("storedata");
 Route::get('/edit/{student_id}', [MainController::class, 'edit'])->name("editdata");
 
 Route::PUT('/update/{student_id}', [MainController::class, 'update'])->name("updatedata");
+Route::get('/delete/{student_id}', [MainController::class, 'destroy'])->name('student.delete');
 
 //Route::delete('/delete', [MainController::class, 'destroy']);
 
