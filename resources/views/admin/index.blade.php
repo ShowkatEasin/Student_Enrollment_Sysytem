@@ -114,7 +114,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/salt_logo.svg" alt="Logo"></a>
+        <h3>Admin</h3>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -324,10 +324,10 @@
                      
        <!-- partial -->
 <div class="content-wrapper">
-    <h1 class="page-title">Data table</h1>
+    <h1 class="page-title">All Student List</h1>
     <div class="card">
       <div class="card-body">
-        <h2 class="card-title">Data table</h2>
+        <h2 class="card-title">Student Data Table</h2>
         <div class="row">
           <div class="col-12">
             @if ($message = Session::get('success'))
