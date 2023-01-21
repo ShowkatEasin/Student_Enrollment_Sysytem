@@ -83,12 +83,10 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit (student_info $student) 
+    public function edit ($id) 
     {
-    return view('admin.edit', compact('student'));
-        
-
-        //return view('admin.edit',compact('student'));
+        $student = student_info::where('student_id' , $id)->first();
+        return view('admin.edit', compact('student'));
     }
 
     /**
@@ -98,10 +96,10 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, student_info $id)
+    public function update(Request $request, $id)
     {
-        $student=student_info::find($id);
-
+        return $request->all();
+        // Student Data Validation 
         $request->validate([
             'student_name' => 'required',
             'student_roll' => 'required',
@@ -111,7 +109,8 @@ class MainController extends Controller
             'student_department' => 'required',
         ]);
 
-       // $student = new student_info;
+        //  Student Information Update 
+        $student=student_info::find($id);
         $student-> student_name = $request-> student_name ;
         $student-> student_roll = $request-> student_roll ;
         $student-> student_phone = $request-> student_phone ;
@@ -120,9 +119,8 @@ class MainController extends Controller
         $student-> student_department = $request-> student_department ;
         $student->update();
 
-        return redirect()->action([MainController::class, 'index'])
-        //return redirect()->route('admin.index');
-       ->with('success','Student Data has been Updates successfully.');
+       
+       return redirect()->route('admin.index')->with('success','Student Data has been Updated successfully.');
         
         //$student->fill($request->post())->save();
         //return redirect()->action([MainController::class, 'index']);

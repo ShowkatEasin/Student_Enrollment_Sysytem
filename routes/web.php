@@ -62,9 +62,9 @@ Route::get('/create', [MainController::class, 'create'])->name("createdata");
 Route::post('/store', [MainController::class, 'store'])->name("storedata");
 
 //Edit Students//
-Route::get('/edit/{id}', [MainController::class, 'edit'])->name("editdata");
+Route::get('/edit/{student_id}', [MainController::class, 'edit'])->name("editdata");
 
-Route::get('/update/{id}', [MainController::class, 'update'])->name("updatedata");
+Route::PUT('/update/{student_id}', [MainController::class, 'update'])->name("updatedata");
 
 //Route::delete('/delete', [MainController::class, 'destroy']);
 

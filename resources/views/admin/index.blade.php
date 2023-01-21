@@ -378,7 +378,6 @@
                   
                 </td>
             </tr>
-
             @php $sl++; @endphp
             @endforeach
  
@@ -391,7 +390,6 @@
     
   </div>
                 
-
   <!-- plugins:js -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
@@ -423,7 +421,5 @@
   <script src="js/dashboard_1.js"></script>
   <!-- End custom js for this page-->
 </body>
-
-
 <!-- Mirrored from www.urbanui.com/salt/jquery/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:32:50 GMT -->
 </html>

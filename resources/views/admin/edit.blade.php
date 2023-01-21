@@ -7,19 +7,19 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title> Edit Student Data</title>
+  <title> Add Student</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
+  <link rel="stylesheet" href="{{ asset('node_modules/mdi/css/materialdesignicons.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css') }}">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="node_modules/rickshaw/rickshaw.min.css" />
-  <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css" />
+  <link rel="stylesheet" href="{{ asset('node_modules/rickshaw/rickshaw.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('bower_components/chartist/dist/chartist.min.css') }}" />
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.html" />
+  <link rel="shortcut icon" href="{{ asset('images/favicon.html') }}" />
 </head>
 <body class="sidebar-dark">
   <!-- partial:partials/_settings-panel.html -->
@@ -327,20 +327,20 @@
 
         <!-- partial -->
         <div class="content-wrapper">
-            <h1 class="page-title">Edit Student Data</h1>
+            <h1 class="page-title">Add New Student</h1>
             <div class="row">
                 <div class="col-12 col-lg-6 grid-margin">
                     <div class="card">
                         <div class="card-body">
-                            <h2 class="card-title">Edit Student Form</h2>
+                            <h2 class="card-title">Update Student Form</h2>
 
 
-                            <form action="{{ URL::to('/edit', $student-> student_id) }}" method="POST" enctype="multipart/form-data"  class="forms-sample" enctype="multipart/form-data">
+                            <form action="{{ route('updatedata', $student->student_id ) }}" method="POST" class="forms-sample" enctype="multipart/form-data">
+                              @method('PUT')
                               @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Student Name</label>
-                                    <input type="text" class="form-control p-input" name="student_name" aria-describedby="emailHelp"
-                                     placeholder="Enter Student Name" value="{{ $student->student_name }}">
+                                    <input type="text" value="{{ $student->student_name }}" class="form-control p-input" name="student_name" aria-describedby="emailHelp" placeholder="Enter Student Name">
                                     @error('name')
                                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror
@@ -348,8 +348,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student ID</label>
-                                    <input type="text" class="form-control p-input" name="student_roll" placeholder="Enter Student Roll"
-                                    value="{{ $student->student_roll }}">
+                                    <input type="text" class="form-control p-input" name="student_roll" placeholder="Enter Student Roll" value="{{ $student->student_id }}">
                                 </div>
 
                                {{--  <div class="form-group">
@@ -364,20 +363,17 @@
  --}}
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Email</label>
-                                    <input type="email" class="form-control p-input" name="student_email" placeholder="Enter Student Email"
-                                    value="{{ $student->student_email }}">
+                                    <input type="email" class="form-control p-input" name="student_email" placeholder="Enter Student Email" value="{{ $student->student_email }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Phone</label>
-                                    <input type="number" class="form-control p-input" name="student_phone" placeholder="Enter Student Phone"
-                                    value="{{ $student->student_phone }}">
+                                    <input type="number" class="form-control p-input" name="student_phone" placeholder="Enter Student Phone">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Student Address</label>
-                                    <input type="text" class="form-control p-input" name="student_address" placeholder="Enter Student Address"
-                                    value="{{ $student->student_address }}">
+                                    <input type="text" class="form-control p-input" name="student_address" placeholder="Enter Student Address">
                                 </div>
 
                                {{--  <div class="form-group">
@@ -405,8 +401,7 @@
 
                               <div class="form-group">
                                 <label for="exampleInputPassword1">Student Department</label>
-                                <select class="form-control p-input" name="student_department"
-                                value="{{ $student->student_department }}">
+                                <select class="form-control p-input" name="student_department">
                                  <option>CSE</option>
                                  <option>EEE</option>
                                  <option>ETE</option>
@@ -415,48 +410,41 @@
                                 </select>
                               </div>
 
-                                
-                                   
-                               
-
-
-                                <button type="submit" class="btn btn-info btn-block">Update</button>
+                                <button type="submit" class="btn btn-success btn-block">Update</button>
                             </form>
                         </div>
                     </div>
                 </div>
-
-               
                 
                 
                 
 
   <!-- plugins:js -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+  <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
+  <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js') }}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
-  <script src="node_modules/flot/jquery.flot.js"></script>
-  <script src="node_modules/flot/jquery.flot.resize.js"></script>
-  <script src="node_modules/flot/jquery.flot.categories.js"></script>
-  <script src="node_modules/flot/jquery.flot.pie.js"></script>
-  <script src="node_modules/rickshaw/vendor/d3.v3.js"></script>
-  <script src="node_modules/rickshaw/rickshaw.min.js"></script>
-  <script src="bower_components/chartist/dist/chartist.min.js"></script>
-  <script src="node_modules/chartist-plugin-legend/chartist-plugin-legend.js"></script>
-  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+  <script src="{{ asset('node_modules/flot/jquery.flot.js') }}"></script>
+  <script src="{{ asset('node_modules/flot/jquery.flot.resize.js') }}"></script>
+  <script src="{{ asset('node_modules/flot/jquery.flot.categories.js') }}"></script>
+  <script src="{{ asset('node_modules/flot/jquery.flot.pie.js') }}"></script>
+  <script src="{{ asset('node_modules/rickshaw/vendor/d3.v3.js') }}"></script>
+  <script src="{{ asset('node_modules/rickshaw/rickshaw.min.js') }}"></script>
+  <script src="{{ asset('bower_components/chartist/dist/chartist.min.js') }}"></script>
+  <script src="{{ asset('node_modules/chartist-plugin-legend/chartist-plugin-legend.js') }}"></script>
+  <script src="{{ asset('node_modules/chart.js/dist/Chart.min.js') }}"></script>
+  <script src="{{ asset('node_modules/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/misc.js"></script>
-  <script src="js/settings.js"></script>
+  <script src="{{ asset('js/off-canvas.js') }}"></script>
+  <script src="{{ asset('js/hoverable-collapse.js') }}"></script>
+  <script src="{{ asset('js/misc.js') }}"></script>
+  <script src="{{ asset('js/settings.js') }}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="js/dashboard_1.js"></script>
+  <script src="{{ asset('js/dashboard_1.js') }}"></script>
   <!-- End custom js for this page-->
 </body>
 
