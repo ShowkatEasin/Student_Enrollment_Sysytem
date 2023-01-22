@@ -116,7 +116,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/salt_logo.svg" alt="Logo"></a>
+        <a class="navbar-brand brand-logo" href="index.html"><h3>Admin</h3></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -299,9 +299,10 @@
                 </ul>
               </div>
             </li> --}}
+            
             <!--main pages end-->
            
-           {{--  <li class="nav-item">
+           <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#advancedSubmenu" aria-expanded="false" aria-controls="advancedSubmenu">
                 <i class="mdi mdi-repeat menu-icon"></i>
                 <span class="menu-title">Teachers</span>
@@ -314,7 +315,7 @@
                   </li>
                   
                   
-                </ul> --}}
+                </ul> 
               </div>
             </li>
             

@@ -299,6 +299,7 @@
               </div>
             </li>
             <!--main pages end-->
+           --}}
            
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#advancedSubmenu" aria-expanded="false" aria-controls="advancedSubmenu">
@@ -313,7 +314,7 @@
                   </li>
                   
                   
-                </ul> --}}
+                </ul> 
               </div>
             </li>
             
