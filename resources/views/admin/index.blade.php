@@ -114,7 +114,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper">
-        <h3>Admin</h3>
+        <a class="navbar-brand brand-logo" href="index.html"><h3>Admin</h3></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -221,6 +221,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
+     
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
@@ -254,7 +255,7 @@
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
               </a>
             </li>
-            <li class="nav-item">
+           {{--  <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#layoutsSubmenu" aria-expanded="false" aria-controls="layoutsSubmenu">
                 <i class="mdi mdi-arrow-expand-all menu-icon"></i>
                 <span class="menu-title">Student Information</span>
@@ -312,7 +313,7 @@
                   </li>
                   
                   
-                </ul>
+                </ul> --}}
               </div>
             </li>
             

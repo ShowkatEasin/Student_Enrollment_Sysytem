@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>Education Master Template</title>
+    <title>Education Master</title>
     <!-- META TAGS -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -112,9 +112,7 @@
                         </div>
                         <div class="ed-com-t1-right">
                             <ul>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal1">Student</a>
-                                </li>
-                                <li><a href="" data-toggle="modal" data-target="#modal2">Sign Out</a>
+                                <li><a href="">Student</a>
                                 </li>
                             </ul>
                         </div>

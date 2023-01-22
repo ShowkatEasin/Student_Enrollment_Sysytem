@@ -256,7 +256,7 @@
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
               </a>
             </li>
-            <li class="nav-item">
+           {{--  <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#layoutsSubmenu" aria-expanded="false" aria-controls="layoutsSubmenu">
                 <i class="mdi mdi-arrow-expand-all menu-icon"></i>
                 <span class="menu-title">Student Information</span>
@@ -298,10 +298,10 @@
                   </li>
                 </ul>
               </div>
-            </li>
+            </li> --}}
             <!--main pages end-->
            
-            <li class="nav-item">
+           {{--  <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#advancedSubmenu" aria-expanded="false" aria-controls="advancedSubmenu">
                 <i class="mdi mdi-repeat menu-icon"></i>
                 <span class="menu-title">Teachers</span>
@@ -314,7 +314,7 @@
                   </li>
                   
                   
-                </ul>
+                </ul> --}}
               </div>
             </li>
             
